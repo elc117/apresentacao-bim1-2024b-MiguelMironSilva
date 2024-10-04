@@ -1,7 +1,7 @@
 # apresentacao-bim1-2024b-MiguelMironSilva
 > **Disciplina:** ELC117 - Paradigmas de Programação - 2024b  
-> **Aluno:** Miguel Miron Silva
-> **Apresentação:** Função 6
+> **Aluno:** Miguel Miron Silva  
+> **Apresentação:** Função 6  
 
 ## Contexto
 
@@ -110,14 +110,13 @@ Isso faz possível percorrer toda a lista de **boundingBoxes** e aplicar a opera
 
 ## Código
 
+Juntando-se tudo que foi elaborado, a solução encontrada foi a seguinte:
 ```Haskell
---Solução
 convertBoundingBoxes :: [(Float, Float, Float, Float)] -> [(Float, Float, Float, Float)]
 convertBoundingBoxes = map (\(x1, x2, y1, y2) -> (x1, y1, x2 - x1, y2 - y1))
 ```
 
 Também há uma versão mais elaborada do programa, que aplica funções dentro da linha:
-
 ```Haskell
 width :: Float -> Float -> Float
 width x1 x2 = x1 - x2
@@ -142,8 +141,9 @@ Dado o código apresentado, o resultado deve ser:
 ## Bibliografia
 [https://pt.wikibooks.org/wiki/Haskell/Lambdas_e_operadores]  
 [https://wiki.haskell.org/Lambda_abstraction]  
-[https://wiki.haskell.org/Higher_order_function]
+[https://wiki.haskell.org/Higher_order_function]  
 [https://www.codecademy.com/resources/docs/markdown/images]  
 
-A LLM **Claude** foi extensivamente utilizada para tirar dúvidas e explicar a funcionalidade de elementos das funções do Haskell:
-[claude.ai]  
+O LLM **Claude** foi extensivamente utilizada para tirar dúvidas e explicar a funcionalidade de elementos das funções do Haskell:
+
+[https://claude.ai/]  
