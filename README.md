@@ -14,6 +14,7 @@ Durante o processo de detecção de objetos, três informações principais são
 - Classes: Cada objeto detectado é classificado em uma de várias categorias (ou classes) pré-definidas. Por exemplo, em um modelo treinado para detectar animais pode incluir "gato" e "cachorro".
 
 A imagem abaixo ilustra as bounding boxes, classes e scores.
+
 [![Bounding boxes classification of a dog and a cat](http://d2l.ai/_images/output_anchor_f592d1_192_0.svg 'Codey the Codecademy mascot')](http://d2l.ai/chapter_computer-vision/anchor.html)
 
 ## Dados
