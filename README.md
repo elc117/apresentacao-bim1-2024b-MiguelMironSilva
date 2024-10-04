@@ -3,7 +3,7 @@
 > **Aluno:** Miguel Miron Silva
 > **Apresentação:** Função 6
 
-##Contexto
+## Contexto
 
 A visão computacional é um campo da inteligência artificial que utiliza algoritmos de aprendizagem de máquina para interpretar e entender o conteúdo de imagens e vídeos. Uma das tarefas fundamentais na visão computacional é a detecção de objetos, que envolve localizar e identificar objetos de interesse dentro de uma imagem ou um vídeo.
 
@@ -16,7 +16,7 @@ Durante o processo de detecção de objetos, três informações principais são
 A imagem abaixo ilustra as bounding boxes, classes e scores.
 [![Bounding boxes classification of a dog and a cat](http://d2l.ai/_images/output_anchor_f592d1_192_0.svg 'Codey the Codecademy mascot')](http://d2l.ai/chapter_computer-vision/anchor.html)
 
-##Dados
+## Dados
 
 Em Haskell, podemos usar listas para representar bounding boxes, scores e classes de objetos. Essas listas têm o mesmo número de elementos, sendo que o primeiro elemento em cada uma delas refere-se ao primeiro objeto, e assim por diante. Por exemplo, no código abaixo, o primeiro objeto é da classe 0, com score 0.95 e com bounding box (34.0, 60.0, 200.0, 320.0).
 
@@ -36,13 +36,13 @@ classes :: [Int]
 classes = [0, 1, 0]
 ```
 
-##Descrição do problema
+## Descrição do problema
 Devemos resolver o exercíco 6 que segue:
 
-**Função 6**
+### Função 6
 Resolva o exercício 5 usando lambda.
 
-**Função 5**
+### Função 5
 Crie uma função para converter a lista de bounding boxes para outro formato: em vez de representar cada bounding box como (xmin, ymin, xmax, ymax), usar a representação (xmin, ymin, width, height), sendo width = xmax - xmin e height = ymax - ymin
 Resolva esta função sem usar lambda.
 
@@ -53,7 +53,7 @@ ghci> convertBoundingBoxes boundingBoxes
 Nome e tipo da função:
 convertBoundingBoxes :: [(Float, Float, Float, Float)] -> [(Float, Float, Float, Float)]
 
-##Resolução do problema
+## Resolução do problema
 No haskell, podemos facilmente fazer o tipo de operação de conversão que queremos usando a função **map**. O **map** é uma função de alta ordem que aplica uma função em todos os elementos em uma dada lista - nesse caso a lista que receberemos se denomina ***boundingBoxes**, e nós queremos mudar sua formatação de ```(x1, x2, y1, y2)``` para ```(x1, y1, x2 - x1, y2 - y1)```. Ao invés de darmos as informações sobre os pontos mínimos e máxmimos horizontais e verticais do *boundingBox*, nós vamos repassar os pontos mínimos verticais e horizontais, e a largura e altura do *boundingBox* a partir desses.
 
 Normalmente, escreveríamos a função que usaríamos com **map**  como uma função separada que é entâo aplicada em cada membro da lista, como por exemplo:
@@ -67,7 +67,7 @@ converboundingBoxes -> map changeFormat boundingBoxes
 
 Porém, como nosso objetivo é utilisar funções lambda para resolver esse problema, podemos utilisar características **tuplas** e **map** para resolvê-lo em apenas uma linha de código.
 
-##Aprendizado 
+### Aprendizado 
 
 A solução foi principalmente inventada usando-se um código lambda com tuplas já apresentado nas aulas:
 ```Haskell
@@ -107,7 +107,7 @@ map (\(x1, x2, y1, y2) = (x1, y1, x2 - x1, y2 - y1))
 
 Isso faz possível percorrer toda a lista de **boundingBoxes** e aplicar a operação em todas as suas tuplas.
 
-##Código
+## Código
 
 ```Haskell
 --Solução
@@ -138,7 +138,7 @@ Dado o código apresentado, o resultado deve ser:
 [(34.0,200.0,26.0,120.0),(100.0,250.0,50.0,130.0),(300.0,450.0,-80.0,0.0)]
 ```
 
-##Bibliografia
+## Bibliografia
 [https://pt.wikibooks.org/wiki/Haskell/Lambdas_e_operadores]  
 [https://wiki.haskell.org/Lambda_abstraction]  
 [https://wiki.haskell.org/Higher_order_function]
